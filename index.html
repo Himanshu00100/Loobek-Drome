@@ -1,0 +1,2947 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loobek - Drone and Camera</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="icon" type="img/jpg"
+        href="Assets//Flaticon/Loobek – Elementor WooCommerce WordPress Theme and 1 more page - Personal - Microsoft​ Edge Beta 11-01-2024 09_41_41.png">
+    <style>
+        @import url("https://fonts.googleapis.com/css2?family=Agbalumo&family=Alata&family=Creepster&family=Homemade+Apple&family=Lumanosimo&family=Nosifer&display=swap");
+
+        * {
+            box-sizing: border-box;
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            font-family: alata, sans-serif;
+        }
+
+        div.wrapper {
+            width: 100%;
+
+        }
+
+        header {
+            
+            
+            background-color: white;
+            z-index: 2;
+            transition:0.3s top;
+
+        }
+
+        /* Topnav */
+
+        div.wrapper div.topnav {
+            display: flex;
+            /* justify-content:center; */
+            align-items: center;
+            width: 100%;
+            height: 40px;
+            padding: 0px 40px 0px 40px;
+            /* border-bottom: 0.5px solid rgba(0, 0, 0, 0.1); */
+            position: relative;
+        }
+
+        div.wrapper div.topnav div.socialmedia {
+            display: flex;
+            justify-content: center;
+            column-gap: 20px;
+            width: 150px;
+            /* border:1px solid red; */
+
+        }
+
+        div.wrapper div.topnav div.socialmedia i {
+            font-size: 18px;
+            color: rgba(0, 0, 0, 0.8);
+            transition: 0.1s;
+        }
+
+        div.wrapper div.topnav div.socialmedia i:hover {
+            color: #3a86ff;
+        }
+
+        div.topnav div.ABHC {
+            display: flex;
+            column-gap: 20px;
+            position: absolute;
+            right: 260px;
+            /* border:1px solid red; */
+        }
+
+
+        div.topnav div.ABHC a {
+            text-decoration: none;
+            color: black;
+            transition: 0.2s;
+        }
+
+        div.topnav div.ABHC a:hover {
+            color: #3a86ff;
+        }
+
+        div.topnav div.lang {
+            display: flex;
+            column-gap: 10px;
+            justify-content: center;
+            align-items: center;
+            position: absolute;
+            right: 120px;
+            /* border: 1px solid red; */
+            transition: 0.2s;
+            /* column-gap:15px; */
+        }
+
+        div.topnav div.lang div.p {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 5px;
+        }
+
+        div.lang div.d1 {
+            position: absolute;
+            height: 90px;
+            padding: 15px;
+            /* width: 100px; */
+            border: 1px solid red;
+            top: 30px;
+            background-color: white;
+            border-radius: 10px;
+            visibility: hidden;
+            opacity: 0;
+            transition: 0.2s height, opacity;
+
+
+        }
+
+        div.lang div.d1 div.canadian a,
+        div.lang div.d1 div.australian a {
+            text-decoration: none;
+            color: black;
+            transition: 0.2s;
+        }
+
+        div.lang div.d1 div.canadian a:hover,
+        div.lang div.d1 div.australian a:hover {
+            color: #3a86ff;
+        }
+
+        div.wrapper div.lang:hover div.d1 {
+            visibility: visible;
+            height: 100px;
+            border: 1px solid black;
+            z-index: 1;
+            opacity: 100;
+        }
+
+        div.lang div.d1 div {
+            display: flex;
+            column-gap: 10px;
+        }
+
+        div.wrapper div.lang:hover div.p {
+            color: #3a86ff;
+        }
+
+        div.lang div.d1 div.canadian {
+            margin-bottom: 15px;
+        }
+
+        div.currency {
+            position: absolute;
+            right: 40px
+        }
+
+        div.currency div.d2 {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: white;
+            position: absolute;
+            row-gap: 10px;
+            right: 0px;
+            top: 30px;
+            width: 120px;
+            height: 80px;
+            z-index: 1;
+            border-radius: 10px;
+            /* padding:20px; */
+            border: 1px solid red;
+            opacity: 0;
+            visibility: hidden;
+            transition: 0.2s;
+
+        }
+
+        div.currency div.d2 a {
+            text-decoration: none;
+            color: black;
+            transition: 0.1s;
+            /* opacity:0; */
+        }
+
+        div.currency div.d2 a:hover {
+            color: #3a86ff;
+        }
+
+        div.currency:hover div.d2 {
+            visibility: visible;
+            opacity: 100;
+            height: 100px;
+        }
+
+        div.currency a.usd {
+            text-decoration: none;
+            color: black;
+            transition: 0.1s;
+        }
+
+        div.currency:hover a.usd {
+            color: #3a86ff;
+        }
+
+        /* Navbar */
+
+        div.wrapper header div.navbar {
+            display: flex;
+            align-items: center;
+            padding: 0px 50px 0px 50px;
+            width: 100%;
+            height: 87px;
+            position: relative;
+            /* border:1px solid red; */
+            /* z-index:-1; */
+            border-top: 1.5px solid rgba(0, 0, 0, 0.07);
+        }
+
+        div.wrapper header div.navbar div.logo {
+            width: 170px;
+            background-color: white;
+            margin-right: 20px;
+        }
+
+        div.wrapper header div.navbar div.logo img.logo {
+            width: 100%;
+        }
+
+        div.navbar div.drones {
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        div.navbar div.drones a.drone img.drone {
+            width: 30px;
+        }
+
+        div.navbar div.drones a.drone {
+            text-decoration: none;
+            color: black;
+            display: flex;
+            /* justify-content:center; */
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        div.navbar div.drones a.drone:hover span.drone {
+            overflow: hidden;
+            position: relative;
+            /* display:flex;
+            justify-content:center;
+            align-items:center; */
+        }
+
+        div.navbar div.drones a.drone:hover span.drone div.underline1 {
+            margin: auto;
+            /* margin:auto; */
+            width: 0%;
+            height: 1px;
+            background-color: black;
+            transition: 0.5s;
+        }
+
+        div.navbar div.drones a.drone:hover span.drone div.underline1 {
+            width: 1%;
+            transform: scalex(100);
+
+        }
+
+        div.navbar div.camera a.camera img.camera {
+            width: 29px;
+        }
+
+        div.navbar div.camera {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        div.navbar div.camera img.camera {
+            width: 35px;
+        }
+
+        div.navbar div.camera a.camera {
+            display: flex;
+            align-items: center;
+            /* justify-content:center; */
+            text-decoration: none;
+            column-gap: 10px;
+            color: black;
+        }
+
+        div.navbar div.camera a.camera:hover span.camera {
+            overflow: hidden;
+            position: relative;
+            /* display:flex;
+            justify-content:center;
+            align-items:center; */
+        }
+
+        div.navbar div.camera a.camera:hover span.camera div.underline2 {
+            margin: auto;
+            /* margin:auto; */
+            width: 0%;
+            height: 1px;
+            background-color: black;
+            transition: 0.5s;
+        }
+
+        div.navbar div.camera a.camera:hover span.camera div.underline2 {
+            width: 1%;
+            transform: scalex(100);
+
+
+
+        }
+
+        div.navbar div.remote {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        div.navbar div.remote a.remote img.remote {
+            width: 30px;
+        }
+
+        div.navbar div.remote a.remote {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+
+        div.navbar div.remote a.remote:hover span.remote {
+            overflow: hidden;
+            position: relative;
+            /* display:flex;
+            justify-content:center;
+            align-items:center; */
+        }
+
+        div.navbar div.remote a.remote:hover span.remote div.underline3 {
+            margin: auto;
+            /* margin:auto; */
+            width: 0%;
+            height: 1px;
+            background-color: black;
+            transition: 0.5s;
+        }
+
+        div.navbar div.remote a.remote:hover span.remote div.underline3 {
+            width: 1%;
+            transform: scalex(100);
+        }
+
+        div.navbar div.memory {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        div.navbar div.memory a.memory img.memory {
+            width: 30px;
+        }
+
+        div.navbar div.memory a.memory {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        div.navbar div.memory a.memory:hover span.memory {
+            overflow: hidden;
+            position: relative;
+            /* display:flex;
+            justify-content:center;
+            align-items:center; */
+        }
+
+        div.navbar div.memory a.memory:hover span.memory div.underline4 {
+            margin: auto;
+            /* margin:auto; */
+            width: 0%;
+            height: 1px;
+            background-color: black;
+            transition: 0.5s;
+        }
+
+        div.navbar div.memory a.memory:hover span.memory div.underline4 {
+            width: 1%;
+            transform: scalex(100);
+
+        }
+
+        div.navbar div.accessories {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+        }
+
+        div.navbar div.accessories a.accessories img.accessories {
+            width: 30px;
+        }
+
+        div.navbar div.accessories a.accessories {
+            display: flex;
+            align-items: center;
+            column-gap: 10px;
+            text-decoration: none;
+            color: black;
+        }
+
+        div.navbar div.accessories a.accessories:hover span.accessories {
+            overflow: hidden;
+            position: relative;
+            /* display:flex;
+            justify-content:center;
+            align-items:center; */
+        }
+
+        div.navbar div.accessories a.accessories:hover span.accessories div.underline5 {
+            margin: auto;
+            /* margin:auto; */
+            width: 0%;
+            height: 1px;
+            background-color: black;
+            transition: 0.5s;
+        }
+
+        div.navbar div.accessories a.accessories:hover span.accessories div.underline5 {
+            width: 1%;
+            transform: scalex(100);
+        }
+
+        div.navbar div.pages a.pages {
+            text-decoration: none;
+            text-align: right;
+            color: black;
+
+        }
+
+        div.navbar div.pages a.pages:hover span.pages {
+            overflow: hidden;
+            position: relative;
+            /* display:flex;
+            justify-content:center;
+            align-items:center; */
+        }
+
+        div.navbar div.pages a.pages:hover span.pages div.underline6 {
+            margin: auto;
+            /* margin:auto; */
+            width: 0%;
+            height: 1px;
+            background-color: black;
+            transition: 0.5s;
+        }
+
+        div.navbar div.pages a.pages:hover span.pages div.underline6 {
+            width: 9%;
+            transform: scalex(10);
+        }
+
+        div.navbar div.search {
+            position: relative;
+            display: flex;
+            width: 180px;
+            height: 45px;
+            border-radius: 10px;
+            margin-left: 30px;
+        }
+
+        div.navbar div.search img.search {
+            position: absolute;
+            right: 10px;
+            top: 10px;
+        }
+
+        div.navbar div.search input[type="text"] {
+            width: 100%;
+            height: 100%;
+            padding-left: 20px;
+            background-color: rgba(0, 0, 0, 0.1);
+            outline: none;
+            border: none;
+            font-family: "alata";
+            border-radius: 10px;
+
+        }
+
+        div.navbar div.anchors {
+            display: flex;
+            column-gap: 30px;
+        }
+
+        div.user {
+            position: absolute;
+            right: 160px;
+
+        }
+
+        div.user a {
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+        }
+
+        div.wishlist {
+            position: absolute;
+            right: 100px;
+        }
+
+        div.wishlist a {
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+        }
+
+        div.cart {
+            display: flex;
+            position: absolute;
+            right: 50px;
+            /* border:1px solid red; */
+
+        }
+
+        div.cart div.count {
+            text-align: center;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            right: -10px;
+            background-color: black;
+            color: white;
+            border-radius: 50%;
+        }
+
+        div.cart a {
+            text-decoration: none;
+            color: black;
+            font-size: 30px;
+        }
+
+        /* Hero1 */
+
+        div.hero1 {
+            display: flex;
+            width: 100%;
+            height: 95vh;
+            margin-bottom: 150px;
+            /* border:1px solid red; */
+        }
+
+        div.hero1 div.left {
+            width: 50%;
+            height: 100%;
+            /* border:1px solid red; */
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.hero1 div.left img.left {
+            width: 100%;
+            height: 100%;
+            transition: 0.2s;
+        }
+
+        div.hero1 div.left div.content {
+            z-index: 1;
+            position: absolute;
+            text-align: center;
+            left: 35%;
+            top: 50%;
+        }
+
+        div.hero1 div.left div.content h1 {
+            font-size: 60px;
+        }
+
+        div.hero1 div.left div.content h3 {
+            margin: 0px 0px 30px 0px;
+        }
+
+        div.hero1 div.left div.content a {
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            padding: 15px 50px;
+            border-radius: 12px;
+            transition: 0.2s;
+
+        }
+
+        div.hero1 div.left div.content a:hover {
+            background-color: #3a86ff;
+            color: white;
+        }
+
+
+        div.hero1 div.left:hover img.left {
+            transform: scale(1.1);
+        }
+
+        div.hero1 div.right {
+            width: 50%;
+            height: 100%;
+            /* border:1px solid red; */
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.hero1 div.right img.right {
+            width: 100%;
+            height: 100%;
+            transition: 0.2s;
+        }
+
+        div.hero1 div.right:hover img.right {
+            transform: scale(1.1);
+
+        }
+
+        div.hero1 div.right div.content {
+            /* display:flex;
+            flex-direction:column; */
+            /* row-gap:0px; */
+            z-index: 1;
+            position: absolute;
+            text-align: center;
+            right: 35%;
+            top: 50%;
+            color: white;
+        }
+
+        div.hero1 div.right div.content h1 {
+            font-size: 60px;
+        }
+
+        div.hero1 div.right div.content h3 {
+            margin: 0px 0px 30px 0px;
+        }
+
+        div.hero1 div.right div.content a {
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            padding: 15px 50px;
+            border-radius: 12px;
+            transition: 0.2s;
+        }
+
+        div.hero1 div.right div.content a:hover {
+            background-color: #3a86ff;
+            color: white;
+        }
+
+
+        /* Activity */
+        div.activity {
+            display: flex;
+            justify-content: center;
+            /* align-items:center; */
+            width: 100%;
+            column-gap: 15px;
+            height: 27vh;
+            padding: 0px 40px;
+            position: relative;
+            /* border: 1px solid red; */
+            margin-bottom: 120px;
+        }
+
+        div.activity h2.activity {
+            position: absolute;
+            top: -60px;
+            left: 40px;
+        }
+
+        div.activity img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        div.activity div.cycling,
+        div.activity div.diving,
+        div.activity div.biking,
+        div.activity div.boarding,
+        div.activity div.ski,
+        div.activity div.snow,
+        div.activity div.surfing,
+        div.activity div.travelling {
+            width: 12%;
+            height: 100%;
+            border-radius: 10px;
+            /* border: 1px solid red; */
+            position: relative;
+            text-align: center;
+        }
+
+        div.activity div.overlay {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 10px;
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            transition: 0.2s linear;
+            background-color: rgba(0, 0, 0, 0);
+        }
+
+        div.activity div.overlay i {
+            color: white;
+            font-size: 25px;
+            visibility: hidden;
+            transition: 0.2s;
+        }
+
+        div.activity div.cycling:hover div.overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        div.activity div.cycling:hover div.overlay i {
+            visibility: visible;
+        }
+
+        div.activity div.overlay i {
+            color: white;
+            font-size: 25px;
+            visibility: hidden;
+            transition: 0.2s;
+        }
+
+        div.activity div.diving:hover div.overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        div.activity div.diving:hover div.overlay i {
+            visibility: visible;
+        }
+
+
+        div.activity div.biking:hover div.overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        div.activity div.biking:hover div.overlay i {
+            visibility: visible;
+        }
+
+        div.activity div.boarding:hover div.overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        div.activity div.boarding:hover div.overlay i {
+            visibility: visible;
+        }
+
+        div.activity div.ski:hover div.overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        div.activity div.ski:hover div.overlay i {
+            visibility: visible;
+        }
+
+        div.activity div.snow:hover div.overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        div.activity div.snow:hover div.overlay i {
+            visibility: visible;
+        }
+
+        div.activity div.surfing:hover div.overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        div.activity div.surfing:hover div.overlay i {
+            visibility: visible;
+        }
+
+        div.activity div.travelling:hover div.overlay {
+            background-color: rgba(0, 0, 0, 0.35);
+        }
+
+        div.activity div.travelling:hover div.overlay i {
+            visibility: visible;
+        }
+
+        div.activity p {
+            transform: translateY(10px);
+        }
+
+
+        /* Hero2 */
+
+
+
+        div.hero2 {
+            /* border:1px solid red; */
+            width: 100%;
+            height: 65vh;
+            padding: 0px 40px;
+            margin-bottom: 150px;
+            position: relative;
+            overflow: hidden;
+
+        }
+
+        div.hero2 div.img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            background-image: url("assets/H2/robin-mcskelly-q_i7zM2ZDrs-unsplash.jpg");
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            position: relative;
+
+        }
+
+        div.hero2 div.img div.overlay {
+            position: absolute;
+            top: 0px;
+            right: 0px;
+            bottom: 0px;
+            left: 0px;
+            border-radius: 10px;
+            background-image: linear-gradient(to right, black, transparent);
+        }
+
+        div.hero2 div.img div.overlay div.content {
+            color: white;
+            position: absolute;
+            left: 60px;
+            top: 150px;
+        }
+
+        div.hero2 div.img div.overlay div.content h1 {
+            font-size: 60px;
+            margin-bottom: 20px;
+        }
+
+        div.hero2 div.cta {
+            display: flex;
+            transform: translate(60px);
+            column-gap: 15px;
+            transition: 0.2s;
+        }
+
+        div.hero2 div.cta a.fordrone {
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.hero2 div.cta a.forcamera {
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.hero2 div.cta a.other {
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            padding: 15px 30px;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.hero2 div.cta a.fordrone:hover,
+        div.hero2 div.cta a.forcamera:hover,
+        div.hero2 div.cta a.other:hover {
+            background-color: #3a86ff;
+            color: white;
+        }
+
+        div.hero2:hover div.cta {
+            transform: translateY(-110px) translateX(60px);
+        }
+
+        div.arrival {
+            display: flex;
+            column-gap: 15px;
+            width: 100%;
+            height: 60vh;
+            padding: 0px 40px;
+            /* border:1px solid red; */
+            position: relative;
+            /* margin-bottom:10px; */
+        }
+
+        div.arrival h2 {
+            position: absolute;
+            top: -30px;
+        }
+
+        div.arrival div.quad,
+        div.arrival div.camera,
+        div.arrival div.controller,
+        div.arrival div.battery,
+        div.arrival div.x200,
+        div.arrival div.phantom {
+            width: 16.5%;
+            height: 80%;
+            /* border:1px solid red; */
+        }
+
+        div.arrival div.quad {
+            background-image: url("Assets/Arrival/01.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.arrival div.quad div.price {
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+        }
+
+        div.arrival div.quad div.price p.model {
+            cursor: pointer;
+            transition: 0.1s;
+
+        }
+
+        div.arrival div.quad div.price p.model:hover {
+            color: #3a86ff;
+        }
+
+        div.arrival div.quad div.quickbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            row-gap: 10px;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            column-gap: 5px;
+            position: absolute;
+            right: -40px;
+            top: 30px;
+            transition: 0.2s;
+        }
+
+        div.arrival div.quad:hover div.quickbar {
+            right: 15px;
+        }
+
+        div.arrival div.quad div.quickbar a {
+            display: flex;
+            padding: 8px 9px;
+            text-decoration: none;
+            color: black;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.15);
+            transition: 0.2s;
+
+        }
+
+        div.arrival div.quad div.quickbar a:hover {
+            background-color: black;
+            color: white;
+
+        }
+
+        div.arrival div.quad div.quickbar a p {
+            visibility: hidden;
+            position: absolute;
+            border-radius: 10px;
+            left: -100px;
+            padding: 5px 5px;
+            background-color: black;
+            color: white;
+            transition: 0.1s;
+        }
+
+        div.arrival div.quad div.quickbar a:hover p {
+            visibility: visible;
+        }
+
+        div.arrival div.camera {
+            background-image: url("Assets/Arrival/02.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.arrival div.camera div.price {
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+        }
+
+        div.arrival div.camera div.price p.model {
+            cursor: pointer;
+            transition: 0.1s;
+
+        }
+
+        div.arrival div.camera div.price p.model:hover {
+            color: #3a86ff;
+        }
+
+        div.arrival div.camera div.quickbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            row-gap: 10px;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            column-gap: 5px;
+            position: absolute;
+            right: -40px;
+            top: 30px;
+            transition: 0.2s;
+        }
+
+        div.arrival div.camera:hover div.quickbar {
+            right: 15px;
+        }
+
+        div.arrival div.camera div.quickbar a {
+            display: flex;
+            padding: 8px 9px;
+            text-decoration: none;
+            color: black;
+            border-radius: 10px;
+            background-color: white;
+            transition: 0.2s;
+
+        }
+
+        div.arrival div.camera div.quickbar a:hover {
+            background-color: black;
+            color: white;
+
+        }
+
+        div.arrival div.camera div.quickbar a p {
+            visibility: hidden;
+            position: absolute;
+            border-radius: 10px;
+            left: -100px;
+            padding: 5px 5px;
+            background-color: white;
+            color: black;
+            transition: 0.1s;
+        }
+
+        div.arrival div.camera div.quickbar a:hover p {
+            visibility: visible;
+        }
+
+        div.arrival div.controller {
+            background-image: url("Assets/Arrival/03-768x768.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.arrival div.controller div.price {
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+        }
+
+        div.arrival div.controller div.price p.model {
+            cursor: pointer;
+            transition: 0.1s;
+
+        }
+
+        div.arrival div.controller div.price p.model:hover {
+            color: #3a86ff;
+        }
+
+        div.arrival div.controller p.off {
+            color: white;
+            background-color: #3a86ff;
+            text-align: center;
+            width: 60px;
+            border-radius: 5px;
+            position: absolute;
+            left: 15px;
+        }
+
+        div.arrival div.controller div.price p.price span {
+            color: #3a86ff;
+        }
+
+        div.arrival div.controller div.price p.price strike {
+            color: rgba(0, 0, 0, 0.5);
+            margin-left: 10px;
+        }
+
+        div.arrival div.controller div.quickbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            row-gap: 10px;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            column-gap: 5px;
+            position: absolute;
+            right: -40px;
+            top: 30px;
+            transition: 0.2s;
+        }
+
+        div.arrival div.controller:hover div.quickbar {
+            right: 15px;
+        }
+
+        div.arrival div.controller div.quickbar a {
+            display: flex;
+            padding: 8px 9px;
+            text-decoration: none;
+            color: black;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.15);
+            transition: 0.2s;
+
+        }
+
+        div.arrival div.controller div.quickbar a:hover {
+            background-color: black;
+            color: white;
+
+        }
+
+        div.arrival div.controller div.quickbar a p {
+            visibility: hidden;
+            position: absolute;
+            border-radius: 10px;
+            left: -100px;
+            padding: 5px 5px;
+            background-color: black;
+            color: white;
+            transition: 0.1s;
+        }
+
+        div.arrival div.controller div.quickbar a:hover p {
+            visibility: visible;
+        }
+
+        div.arrival div.battery {
+            background-image: url("Assets/Arrival/05.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.arrival div.battery div.price {
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+        }
+
+        div.arrival div.battery div.price p.model {
+            cursor: pointer;
+            transition: 0.1s;
+
+        }
+
+        div.arrival div.battery div.price p.model:hover {
+            color: #3a86ff;
+        }
+
+        div.arrival div.battery div.quickbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            row-gap: 10px;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            column-gap: 5px;
+            position: absolute;
+            right: -40px;
+            top: 30px;
+            transition: 0.2s;
+        }
+
+        div.arrival div.battery:hover div.quickbar {
+            right: 15px;
+        }
+
+        div.arrival div.battery div.quickbar a {
+            display: flex;
+            padding: 8px 9px;
+            text-decoration: none;
+            color: black;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.15);
+            transition: 0.2s;
+
+        }
+
+        div.arrival div.battery div.quickbar a:hover {
+            background-color: black;
+            color: white;
+
+        }
+
+        div.arrival div.battery div.quickbar a p {
+            visibility: hidden;
+            position: absolute;
+            border-radius: 10px;
+            left: -100px;
+            padding: 5px 5px;
+            background-color: black;
+            color: white;
+            transition: 0.1s;
+        }
+
+        div.arrival div.battery div.quickbar a:hover p {
+            visibility: visible;
+        }
+
+        div.arrival div.x200 {
+            background-image: url("Assets/Arrival/x200.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.arrival div.x200 div.price {
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+        }
+
+        div.arrival div.x200 div.price p.model {
+            cursor: pointer;
+            transition: 0.1s;
+
+        }
+
+        div.arrival div.x200 div.price p.model:hover {
+            color: #3a86ff;
+        }
+
+        div.arrival div.x200 div.quickbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            row-gap: 10px;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            column-gap: 5px;
+            position: absolute;
+            right: -40px;
+            top: 30px;
+            transition: 0.2s;
+        }
+
+        div.arrival div.x200:hover div.quickbar {
+            right: 15px;
+        }
+
+        div.arrival div.x200 div.quickbar a {
+            display: flex;
+            padding: 8px 9px;
+            text-decoration: none;
+            color: black;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.15);
+            transition: 0.2s;
+
+        }
+
+        div.arrival div.x200 div.quickbar a:hover {
+            background-color: black;
+            color: white;
+
+        }
+
+        div.arrival div.x200 div.quickbar a p {
+            visibility: hidden;
+            position: absolute;
+            border-radius: 10px;
+            left: -100px;
+            padding: 5px 5px;
+            background-color: black;
+            color: white;
+            transition: 0.1s;
+        }
+
+        div.arrival div.x200 div.quickbar a:hover p {
+            visibility: visible;
+        }
+
+        div.arrival div.phantom {
+            background-image: url("Assets/Arrival/21-768x768.jpg");
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.arrival div.phantom div.price {
+            position: absolute;
+            bottom: 0px;
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+
+        }
+
+        div.arrival div.phantom div.price p.model {
+            cursor: pointer;
+            transition: 0.1s;
+
+        }
+
+        div.arrival div.phantom div.price p.model:hover {
+            color: #3a86ff;
+        }
+
+        div.arrival div.phantom div.quickbar {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            row-gap: 10px;
+            width: 40px;
+            display: flex;
+            flex-direction: column;
+            column-gap: 5px;
+            position: absolute;
+            right: -40px;
+            top: 30px;
+            transition: 0.2s;
+        }
+
+        div.arrival div.phantom:hover div.quickbar {
+            right: 15px;
+        }
+
+        div.arrival div.phantom div.quickbar a {
+            display: flex;
+            padding: 8px 9px;
+            text-decoration: none;
+            color: black;
+            border-radius: 10px;
+            background-color: rgba(0, 0, 0, 0.15);
+            transition: 0.2s;
+
+        }
+
+        div.arrival div.phantom div.quickbar a:hover {
+            background-color: black;
+            color: white;
+
+        }
+
+        div.arrival div.phantom div.quickbar a p {
+            visibility: hidden;
+            position: absolute;
+            border-radius: 10px;
+            left: -100px;
+            padding: 5px 5px;
+            background-color: black;
+            color: white;
+            transition: 0.1s;
+        }
+
+        div.arrival div.phantom div.quickbar a:hover p {
+            visibility: visible;
+        }
+
+
+        /* Hero3 */
+
+
+        div.hero3 {
+            display: flex;
+            column-gap: 20px;
+            width: 100%;
+            height: 56vh;
+            margin-bottom: 170px;
+            padding: 0px 40px;
+            /* border:1px solid red; */
+        }
+
+        div.hero3 div.protection {
+            width: 33%;
+            height: 100%;
+            /* border:1px solid red; */
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.hero3 div.protection img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.hero3 div.protection:hover img {
+            transform: scale(1.2);
+        }
+
+        div.hero3 div.gimbal {
+            width: 33%;
+            height: 100%;
+            /* border:1px solid red; */
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.hero3 div.gimbal img {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.hero3 div.gimbal:hover img {
+            transform: scale(1.2);
+        }
+
+        div.hero3 div.memorylens {
+            display: flex;
+            flex-direction: column;
+            row-gap: 20px;
+            width: 33%;
+            height: 100%;
+            /* border:1px solid red; */
+        }
+
+        div.hero3 div.memorylens div.top {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        div.hero3 div.memorylens div.top div.content a.shopnow {
+
+            background-color: black;
+            color: white;
+            border-radius: 10px;
+            padding: 8px 25px;
+            transition: 0.2s;
+
+        }
+
+        div.hero3 div.memorylens div.top div.content a.shopnow:hover {
+            background-color: #3a86ff;
+            color: white;
+        }
+
+        div.hero3 div.memorylens div.top div.content h2 {
+            margin-bottom: 20px;
+        }
+
+        div.hero3 div.memorylens div.top img {
+            transition: 0.2s;
+            border-radius: 10px;
+        }
+
+        div.hero3 div.memorylens div.top:hover img {
+            transform: scale(1.2);
+        }
+
+        div.hero3 div.top img {
+            width: 100%;
+            height: 100%;
+        }
+
+        div.hero3 div.memorylens div.bottom {
+            display: flex;
+            column-gap: 20px;
+        }
+
+        div.hero3 div.bottom img {
+            width: 100%;
+            height: 100%;
+        }
+
+        div.hero3 div.bottom div.left {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        div.hero3 div.bottom div.left h2 {
+            margin-bottom: 20px;
+        }
+
+        div.hero3 div.bottom div.left div.content a.shopnow2 {
+            padding: 8px 25px;
+            color: white;
+            background-color: black;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.hero3 div.bottom div.left div.content a.shopnow2:hover {
+            color: white;
+            background-color: #3a86ff;
+
+        }
+
+        div.hero3 div.bottom div.right div.content a.shopnow3 {
+            padding: 8px 25px;
+            color: white;
+            background-color: black;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.hero3 div.bottom div.right h2 {
+            margin-bottom: 20px;
+        }
+
+        div.hero3 div.bottom div.right div.content a.shopnow3:hover {
+            color: white;
+            background-color: #3a86ff;
+
+        }
+
+        div.hero3 div.bottom div.left img {
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.hero3 div.bottom div.left:hover img {
+            transform: scale(1.2);
+        }
+
+        div.hero3 div.bottom div.right {
+            border-radius: 10px;
+            overflow: hidden;
+            position: relative;
+
+        }
+
+        div.hero3 div.bottom div.right img {
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.hero3 div.bottom div.right:hover img {
+            transform: scale(1.2);
+        }
+
+        div.hero3 div.protection h1 {
+            color: white;
+            position: absolute;
+            top: 80px;
+            left: 100px;
+            z-index: 1;
+        }
+
+        div.hero3 div.protection a {
+            position: absolute;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            padding: 8px 25px;
+            border-radius: 10px;
+            z-index: 1;
+            top: 140px;
+            left: 170px;
+            transition: 0.2s;
+        }
+
+        div.hero3 div.protection a:hover {
+            color: white;
+            background-color: #3a86ff;
+        }
+
+        div.hero3 div.gimbal h1 {
+            color: black;
+            position: absolute;
+            top: 80px;
+            left: 100px;
+            z-index: 1;
+        }
+
+        div.hero3 div.gimbal a {
+            position: absolute;
+            text-decoration: none;
+            color: white;
+            background-color: black;
+            padding: 8px 25px;
+            border-radius: 10px;
+            z-index: 1;
+            top: 140px;
+            left: 170px;
+            transition: 0.2s;
+        }
+
+        div.hero3 div.gimbal a:hover {
+            color: white;
+            background-color: #3a86ff;
+        }
+
+        div.hero3 div.memorylens div.top div.content {
+            position: absolute;
+            z-index: 1;
+            top: 50px;
+            left: 70px;
+            text-align: center;
+
+        }
+
+        div.hero3 div.memorylens div.top div.content a {
+            text-decoration: none;
+            /* color:black; */
+
+        }
+
+        div.hero3 div.memorylens div.bottom div.left div.content {
+            text-align: center;
+            position: absolute;
+            z-index: 1;
+            bottom: 40px;
+            left: 60px;
+
+        }
+
+        div.hero3 div.memorylens div.bottom div.left div.content a {
+            text-decoration: none;
+            /* color:black; */
+        }
+
+        div.hero3 div.memorylens div.bottom div.right div.content {
+            position: absolute;
+            z-index: 1;
+            text-align: center;
+            bottom: 40px;
+            left: 60px;
+
+        }
+
+        div.hero3 div.memorylens div.bottom div.right div.content a {
+            text-decoration: none;
+            /* color:black; */
+        }
+
+        /* Video */
+
+        div.videos {
+            display: flex;
+            column-gap: 30px;
+            width: 100%;
+            height: 32vh;
+            margin-bottom: 100px;
+            padding: 0px 40px;
+            /* border:1px solid red; */
+            position: relative;
+            margin-bottom: 150px;
+        }
+
+        div.videos h2 {
+            position: absolute;
+            top: -60px;
+        }
+
+        div.videos div.v1 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 33.3%;
+            height: 100%;
+            /* border: 1px solid red; */
+            border-radius: 10px;
+        }
+
+        div.videos div.v1 i {
+            position: absolute;
+            color: white;
+            opacity: 0.6;
+            font-size: 30px;
+            transition: 0.2s;
+        }
+
+        div.videos div.v1:hover i {
+            opacity: 1;
+        }
+
+        div.videos div.v1 video.v1 {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+
+        div.videos div.v2 {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 33.3%;
+            height: 100%;
+            /* border: 1px solid red; */
+            border-radius: 10px;
+        }
+
+        div.videos div.v2 i {
+            position: absolute;
+            color: white;
+            opacity: 0.6;
+            font-size: 30px;
+            transition: 0.2s;
+        }
+
+        div.videos div.v2:hover i {
+            opacity: 1;
+        }
+
+        div.videos div.v2 video.v1 {
+            transform: scale(1.1);
+            /* width:100%; */
+            border-radius: 10px;
+        }
+
+        div.videos div.v2 video.v2 {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        div.videos div.v3 {
+            width: 33.3%;
+            height: 100%;
+            /* border: 1px solid red; */
+            border-radius: 10px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        div.videos div.v3 i {
+            position: absolute;
+            color: white;
+            opacity: 0.6;
+            font-size: 30px;
+            transition: 0.2s;
+        }
+
+        div.videos div.v3:hover i {
+            opacity: 1;
+        }
+
+        div.videos div.v3 video.v1 {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+            transform: scalex(1.5);
+        }
+
+        div.videos div.v3 video.v3 {
+            width: 100%;
+            height: 100%;
+            border-radius: 10px;
+        }
+
+        /* Blog */
+        div.blogg {
+            display: flex;
+            column-gap: 20px;
+            width: 100%;
+            height: 40vh;
+            /* border:1px solid red; */
+            padding: 0px 40px;
+            position: relative;
+            margin-bottom: 100px;
+
+        }
+
+        div.blogg div.content h3 {
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        div.blogg div.content h3:hover {
+            color: #3a86ff;
+        }
+
+        div.blogg h2.blogg {
+            position: absolute;
+            top: -60px;
+        }
+
+        div.blogg div.cystomer {
+            width: 25%;
+            height: 100%;
+            /* border: 1px solid red; */
+            border-radius: 10px;
+        }
+
+
+        div.blogg div.cystomer div.img1 {
+            width: 100%;
+            height: 60%;
+            border-radius: 10px;
+            overflow: hidden;
+
+        }
+
+        div.blogg div.cystomer div.img1 img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.blogg div.cystomer div.img1:hover img {
+            transform: scale(1.2);
+        }
+
+        div.blogg div.cystomer div.content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            margin-top: 18px;
+        }
+
+        div.blogg div.cystomer div.content p {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        div.blogg div.cystomer div.content a {
+            text-decoration: none;
+            color: black;
+        }
+
+        div.blogg div.dmb {
+            width: 25%;
+            height: 100%;
+            border-radius: 10px;
+            /* border: 1px solid red; */
+        }
+
+        div.blogg div.dmb div.img2 {
+            width: 100%;
+            height: 60%;
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        div.blogg div.dmb div.img2 img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.blogg div.dmb div.img2:hover img {
+            transform: scale(1.2);
+        }
+
+        div.blogg div.dmb div.content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            margin-top: 18px;
+        }
+
+        div.blogg div.dmb div.content p {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        div.blogg div.dmb div.content a {
+            text-decoration: none;
+            color: black;
+        }
+
+        div.blogg div.underwater {
+            width: 25%;
+            height: 100%;
+            border-radius: 10px;
+            /* border: 1px solid red; */
+        }
+
+        div.blogg div.underwater div.img3 {
+            width: 100%;
+            height: 60%;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        div.blogg div.underwater div.img3 img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.blogg div.underwater div.img3:hover img {
+            transform: scale(1.2);
+        }
+
+        div.blogg div.underwater div.content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            margin-top: 18px;
+        }
+
+        div.blogg div.underwater div.content p {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        div.blogg div.underwater div.content a {
+            text-decoration: none;
+            color: black;
+        }
+
+        div.blogg div.drone {
+            width: 25%;
+            height: 100%;
+            border-radius: 10px;
+            /* border: 1px solid red; */
+        }
+
+        div.blogg div.drone div.img4 {
+            width: 100%;
+            height: 60%;
+            overflow: hidden;
+            border-radius: 10px;
+        }
+
+        div.blogg div.drone div.img4 img {
+            width: 100%;
+            border-radius: 10px;
+            transition: 0.2s;
+        }
+
+        div.blogg div.drone div.img4:hover img {
+            transform: scale(1.2);
+        }
+
+        div.blogg div.drone div.content {
+            display: flex;
+            flex-direction: column;
+            row-gap: 10px;
+            margin-top: 18px;
+        }
+
+        div.blogg div.drone div.content p {
+            color: rgba(0, 0, 0, 0.5);
+        }
+
+        div.blogg div.drone div.content a {
+            text-decoration: none;
+            color: black;
+        }
+
+        div.blogg div.cystomer div.content div.readmore {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 82px;
+            /* border:1px solid red; */
+        }
+
+        div.blogg div.cystomer div.content div.readmore div {
+            width: 1%;
+            height: 1.2px;
+            opacity: 0;
+            background-color: black;
+            transition: 0.2s;
+        }
+
+        div.blogg div.cystomer div.content div.readmore:hover div {
+            opacity: 1;
+            transform: scaleX(98);
+            background-color: #3a86ff;
+        }
+
+        div.blogg div.cystomer div.content div.readmore a {
+            transition: 0.2s;
+        }
+
+        div.blogg div.cystomer div.content div.readmore a:hover {
+            color: #3a86ff;
+        }
+
+
+        div.blogg div.dmb div.content div.readmore {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 82px;
+            /* border:1px solid red; */
+        }
+
+        div.blogg div.dmb div.content div.readmore div {
+            width: 1%;
+            height: 1.2px;
+            opacity: 0;
+            background-color: black;
+            transition: 0.2s;
+        }
+
+        div.blogg div.dmb div.content div.readmore:hover div {
+            opacity: 1;
+            transform: scaleX(98);
+            background-color: #3a86ff;
+        }
+
+        div.blogg div.dmb div.content div.readmore a {
+            transition: 0.2s;
+        }
+
+        div.blogg div.dmb div.content div.readmore a:hover {
+            color: #3a86ff;
+        }
+
+
+        div.blogg div.underwater div.content div.readmore {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 82px;
+            /* border:1px solid red; */
+        }
+
+        div.blogg div.underwater div.content div.readmore div {
+            width: 1%;
+            height: 1.2px;
+            opacity: 0;
+            background-color: black;
+            transition: 0.2s;
+        }
+
+        div.blogg div.underwater div.content div.readmore:hover div {
+            opacity: 1;
+            transform: scaleX(98);
+            background-color: #3a86ff;
+        }
+
+        div.blogg div.underwater div.content div.readmore a {
+            transition: 0.2s;
+        }
+
+        div.blogg div.underwater div.content div.readmore a:hover {
+            color: #3a86ff;
+        }
+
+
+        div.blogg div.drone div.content div.readmore {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 82px;
+            /* border:1px solid red; */
+        }
+
+        div.blogg div.drone div.content div.readmore div {
+            width: 1%;
+            height: 1.2px;
+            opacity: 0;
+            background-color: black;
+            transition: 0.2s;
+        }
+
+        div.blogg div.drone div.content div.readmore:hover div {
+            opacity: 1;
+            transform: scaleX(98);
+            background-color: #3a86ff;
+        }
+
+        div.blogg div.drone div.content div.readmore a {
+            transition: 0.2s;
+        }
+
+        div.blogg div.drone div.content div.readmore a:hover {
+            color: #3a86ff;
+        }
+
+
+        /* Mission */
+        div.mission {
+            display: flex;
+            width: 100%;
+            height: 60vh;
+            position: relative;
+            /* border: 1px solid red; */
+            background-color: rgba(0, 0, 0, 0.04);
+        }
+
+        div.mission div.m1 {
+            width: 380px;
+            /* height:100px; */
+            position: absolute;
+            position: absolute;
+            left: 40px;
+            top: 50px;
+            /* overflow:hidden; */
+            border-radius: 10px;
+            /* border:1px solid red; */
+        }
+
+        div.mission div.m1 img.m1 {
+            width: 100%;
+            height: 100%;
+            transition: 0.2s;
+
+        }
+
+        div.mission div.m1:hover img {
+            transform: scale(1.1);
+        }
+
+        div.mission div.m2 {
+            width: 380px;
+            /* height:100px; */
+            position: absolute;
+            right: 40px;
+            top: 50px;
+        }
+
+        div.mission div.m2 img.m2 {
+            width: 100%;
+            height: 100%;
+            transition: 0.2s;
+        }
+
+        div.mission div.m2:hover img {
+            transform: scale(1.1);
+        }
+
+        div.mission div.content {
+            position: absolute;
+            top: 50px;
+            left: 500px;
+        }
+
+        div.mission div.content h1 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 45px;
+        }
+
+        div.mission div.content p {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        div.mission div.content a {
+            padding: 13px 35px;
+            margin-left: 180px;
+            text-decoration: none;
+            border-radius: 8px;
+            color: white;
+            background-color: black;
+            transition: 0.2s;
+        }
+
+        div.mission div.content a:hover {
+            background-color: #3a86ff;
+        }
+
+        footer {
+            width: 100%;
+            height: 90vh;
+            background-color: black;
+        }
+
+        footer div.top {
+            width: 100%;
+            height: 67.5%;
+            background-color: black;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        footer div.services {
+            display: flex;
+            align-items: center;
+            width: 100%;
+            height: 15.9vh;
+            padding: 0px 40px;
+            background-color: black;
+            column-gap: 20px;
+
+
+        }
+
+        footer div.services div.shipping {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 20px;
+            background-color: white;
+            border-radius: 10px;
+            width: 25%;
+            height: 75%;
+        }
+
+        footer div.services div.shipping img.shipping {
+            transition: 0.2s;
+        }
+
+        footer div.services div.shipping img.shipping:hover {
+            opacity: 0.5;
+        }
+
+
+        footer div.services div.discount {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+            padding: 0px 40px;
+            background-color: white;
+            /* border-right:1px solid black; */
+            border-radius: 10px;
+            width: 25%;
+            height: 75%;
+            /* border: 1px solid red; */
+        }
+
+        footer div.services div.discount img.discount {
+            transition: 0.2s;
+        }
+
+        footer div.services div.discount img.discount:hover {
+            opacity: 0.5;
+        }
+
+
+        footer div.services div.gift {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 30px;
+            padding: 0px 40px;
+            background-color: white;
+            /* border-right:1px solid black; */
+            border-radius: 10px;
+            width: 25%;
+            height: 75%;
+            /* border: 1px solid red; */
+        }
+
+        footer div.services div.gift img.gift {
+            transition: 0.2s;
+        }
+
+        footer div.services div.gift img.gift:hover {
+            opacity: 0.5;
+        }
+
+
+        footer div.services div.customercare {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            column-gap: 10px;
+            padding: 0px 40px;
+            background-color: white;
+            /* border-right:1px solid black; */
+            border-radius: 10px;
+            width: 25%;
+            height: 75%;
+            /* border: 1px solid red; */
+        }
+
+        footer div.services div.customercare img.customercare {
+            transition: 0.2s;
+        }
+
+        footer div.services div.customercare img.customercare:hover {
+            opacity: 0.5;
+        }
+
+        footer div.copyrightt {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 100%;
+            height: 13vh;
+            padding: 0px 40px;
+            background-color: black;
+            color: white;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        footer div.copyrightt div.rights {
+            display: flex;
+            column-gap: 20px;
+
+        }
+
+        footer div.copyrightt div.rights a {
+            text-decoration: none;
+            color: white;
+            transition: 0.2s;
+        }
+
+        footer div.copyrightt div.rights a:hover {
+            color: #3a86ff;
+        }
+
+        footer div.copyrightt div.pmethods {
+            display: flex;
+            column-gap: 10px;
+        }
+
+        footer div.copyrightt div.pmethods i {
+            font-size: 22px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header id="header">
+            <div class="topnav">
+                <div class="socialmedia">
+                    <div class="insta">
+                        <i class="fa fa-instagram"></i>
+                    </div>
+                    <div class="google">
+                        <i class="fa fa-google-plus"></i>
+                    </div>
+                    <div class="fb">
+                        <i class="fa fa-facebook"></i>
+                    </div>
+                    <div class="twitter">
+                        <i class="fa fa-twitter"></i>
+                    </div>
+                </div>
+                <div class="ABHC">
+                    <div class="about">
+                        <a href="#" class="about">About</a>
+                    </div>
+                    <div class="blog">
+                        <a href="#">Blog</a>
+                    </div>
+                    <div class="help">
+                        <a href="#">Help</a>
+                    </div>
+                    <div class="contact">
+                        <a href="#">Contact</a>
+                    </div>
+                </div>
+                <div class="lang">
+                    <div class="d1">
+                        <div class="canadian">
+                            <img src="Assets/lang/canada.png" alt="">
+                            <a href="#">Canadian</a>
+                        </div>
+                        <div class="australian">
+                            <img src="Assets/lang/australia.png" alt="">
+                            <a href="#">Australian</a>
+                        </div>
+                    </div>
+                    <div class="img">
+                        <img src="Assets/lang/united-kingdom.png" alt="">
+                    </div>
+                    <div class="p">
+                        <p class="">English</p>
+                        <i class="fa fa-angle-down"></i>
+                    </div>
+                    <div class="i">
+
+                    </div>
+                </div>
+                <div class="currency">
+                    <a href="#" class="usd">$ USD
+                        <i class="fa fa-angle-down"></i>
+                    </a>
+                    <div class="d2">
+                        <a href="#" class="eur">&#8364 EUR</a>
+                        <a href="#" class="gbp">&#8356 GBP</a>
+                    </div>
+                </div>
+            </div>
+            <div class="navbar">
+                <div class="logo">
+                    <img src="Assets/logo/logo.png" alt="logo" class="logo">
+                </div>
+                <div class="anchors">
+                    <div class="drones">
+                        <a href="#" class="drone"><img src="assets/navbar pngs/drone.png" alt="" class="drone"><span
+                                class="drone">Drones
+                                <div class="underline1"></div>
+                            </span>
+                        </a>
+                    </div>
+                    <div class="camera">
+
+                        <a href="#" class="camera"><img src="assets/navbar pngs/camera.png" alt="" class="camera"><span
+                                class="camera">Cameras
+                                <div class="underline2"></div>
+                            </span></a>
+                    </div>
+                    <div class="remote">
+
+                        <a href="#" class="remote"><img src="assets/navbar pngs/controller.png" alt=""
+                                class="remote"><span class="remote">Remote controllers
+                                <div class="underline3"></div>
+                            </span></a>
+                    </div>
+
+                    <div class="memory">
+                        <a href="#" class="memory"><img src="assets/navbar pngs/memory-card.png" alt=""
+                                class="memory"><span class="memory">Memory
+                                <div class="underline4"></div>
+                            </span></a>
+                    </div>
+                    <div class="accessories">
+
+                        <a href="#" class="accessories"><img src="assets/navbar pngs/cable.png" alt=""
+                                class="accessories"><span class="accessories">Accessories
+                                <div class="underline5"></div>
+                            </span></a>
+                    </div>
+                    <div class="pages">
+                        <a href="#" class="pages"><span class="pages">Pages
+                                <div class="underline6"></div>
+                            </span></a>
+                    </div>
+                </div>
+                <div class="search">
+                    <input type="text" placeholder="Search for products">
+                    <img src="assets/navbar pngs/search.png" alt="" class="search">
+                </div>
+                <div class="user">
+                    <a href="#" class="user">
+                        <i class="fa fa-user-o"></i>
+                    </a>
+                </div>
+                <div class="wishlist">
+                    <a href="#" class=wishlist><i class="fa fa-heart-o"></i></a>
+
+                </div>
+                <div class="cart">
+                    <a href="#" class="cart">
+                        <i class="fa fa-cart-plus"></i>
+                    </a>
+                    <div class="count">0</div>
+                </div>
+            </div>
+        </header>
+        <div class="hero1">
+            <div class="left">
+                <div class="content">
+                    <h1>Camera <br> Drones</h1>
+                    <h3>Fly & record what you want</h3>
+                    <a href="#" class="shopnow">Shop now</a>
+
+                </div>
+                <img src="assets/H1/drone-1-banner-1.jpg" alt="" class="left">
+            </div>
+            <div class="right">
+                <div class="content">
+                    <h1>Action <br> Cameras</h1>
+                    <h3>Best for action & sport videos</h3>
+                    <a href="#" class="shopnow">Shop now</a>
+
+                </div>
+                <img src="assets/H1/drone-1-banner-2.jpg" alt="" class="right">
+            </div>
+        </div>
+        <div class="activity">
+            <h2 class="activity">Choose your activity</h2>
+            <div class="cycling">
+                <div class="overlay"><i class="fa fa-plus"></i></div>
+                <img src="assets/Activity/cat-bicycling.jpg" alt="" class="one">
+                <p class="cycling">Bicycling</p>
+            </div>
+            <div class="diving">
+                <div class="overlay"><i class="fa fa-plus"></i></div>
+                <img src="assets/Activity/cat-diving.jpg" alt="" class="two">
+                <p class="diving">Diving</p>
+
+            </div>
+            <div class="biking">
+                <div class="overlay"><i class="fa fa-plus"></i></div>
+                <img src="assets/Activity/cat-mountaint-bike.jpg" alt="" class="three">
+                <p class="biking">Mountain Bike</p>
+
+            </div>
+            <div class="boarding">
+                <div class="overlay"><i class="fa fa-plus"></i></div>
+                <img src="assets/Activity/cat-skateboard.jpg" alt="" class="four">
+                <p class="boarding">Skateboarding</p>
+            </div>
+            <div class="ski">
+                <div class="overlay"><i class="fa fa-plus"></i></div>
+                <img src="assets/Activity/cat-ski.jpg" alt="" class="five">
+                <p class="ski">Ski</p>
+            </div>
+            <div class="snow">
+                <div class="overlay"><i class="fa fa-plus"></i></div>
+                <img src="assets/Activity/cat-snowboard.jpg" alt="" class="six">
+                <p class="snow">Snowboarding</p>
+            </div>
+            <div class="surfing">
+                <div class="overlay"><i class="fa fa-plus"></i></div>
+                <img src="assets/Activity/cat-surf.jpg" alt="" class="seven">
+                <p class="surfing">Surfing</p>
+            </div>
+            <div class="travelling">
+                <div class="overlay"><i class="fa fa-plus"></i></div>
+                <img src="assets/Activity/cat-travel.jpg" alt="" class="eight">
+                <p class="travelling">Travelling</p>
+            </div>
+
+        </div>
+        <div class="hero2">
+            <div class="img">
+                <div class="overlay">
+                    <div class="content">
+                        <h1>Best <br>Accessories</h1>
+                        <h3>Extra battery or case ?</h3>
+                    </div>
+                </div>
+            </div>
+            <div class="cta">
+                <a href="#" class="fordrone">For Drone</a>
+                <a href="#" class="forcamera">For Camera</a>
+                <a href="#" class="other">Other</a>
+            </div>
+        </div>
+        <div class="arrival">
+            <h2 class="arrival">New Arrival</h2>
+            <div class="quad">
+                <div class="price">
+                    <p class="model">Lovic Air-2 Quadcopter</p>
+                    <p class="price">$40.00</p>
+
+                </div>
+                <div class="quickbar">
+                    <a href="#" class="heart">
+                        <i class="fa fa-heart-o"></i>
+                        <p class="wishlist">Wishlist</p>
+                    </a>
+                    <a href="#" class="search">
+                        <i class="fa fa-search"></i>
+                        <p class="quickview">Quick view</p>
+                    </a>
+                    <a href="#" class="compare">
+                        <i class="fa fa-bar-chart"></i>
+                        <p class="compare">Compare</p>
+                    </a>
+                    <a href="#" class="cart">
+                        <i class="fa fa-cart-plus"></i>
+                        <p class="cart">Add to cart</p>
+                    </a>
+
+                </div>
+            </div>
+            <div class="camera">
+                <div class="price">
+                    <p class="model">4k Action Camera HD</p>
+                    <p class="price">$40.00</p>
+
+                </div>
+                <div class="quickbar">
+                    <a href="#" class="heart">
+                        <i class="fa fa-heart-o"></i>
+                        <p class="wishlist">Wishlist</p>
+                    </a>
+                    <a href="#" class="search">
+                        <i class="fa fa-search"></i>
+                        <p class="quickview">Quick view</p>
+                    </a>
+                    <a href="#" class="compare">
+                        <i class="fa fa-bar-chart"></i>
+                        <p class="compare">Compare</p>
+                    </a>
+                    <a href="#" class="cart">
+                        <i class="fa fa-cart-plus"></i>
+                        <p class="cart">Add to cart</p>
+                    </a>
+
+                </div>
+            </div>
+            <div class="controller">
+                <div class="price">
+                    <p class="model">Lovic Remote Controller </p>
+                    <p class="price"><span>$90.87</span><strike>$100.97</strike></p>
+
+                </div>
+                <p class="off">-10%</p>
+                <div class="quickbar">
+                    <a href="#" class="heart">
+                        <i class="fa fa-heart-o"></i>
+                        <p class="wishlist">Wishlist</p>
+                    </a>
+                    <a href="#" class="search">
+                        <i class="fa fa-search"></i>
+                        <p class="quickview">Quick view</p>
+                    </a>
+                    <a href="#" class="compare">
+                        <i class="fa fa-bar-chart"></i>
+                        <p class="compare">Compare</p>
+                    </a>
+                    <a href="#" class="cart">
+                        <i class="fa fa-cart-plus"></i>
+                        <p class="cart">Add to cart</p>
+                    </a>
+
+                </div>
+            </div>
+            <div class="battery">
+                <div class="price">
+                    <p class="model">Lipo Battery For Drone</p>
+                    <p class="price">$51.79</p>
+
+                </div>
+                <div class="quickbar">
+                    <a href="#" class="heart">
+                        <i class="fa fa-heart-o"></i>
+                        <p class="wishlist">Wishlist</p>
+                    </a>
+                    <a href="#" class="search">
+                        <i class="fa fa-search"></i>
+                        <p class="quickview">Quick view</p>
+                    </a>
+                    <a href="#" class="compare">
+                        <i class="fa fa-bar-chart"></i>
+                        <p class="compare">Compare</p>
+                    </a>
+                    <a href="#" class="cart">
+                        <i class="fa fa-cart-plus"></i>
+                        <p class="cart">Add to cart</p>
+                    </a>
+
+                </div>
+            </div>
+            <div class="x200">
+                <div class="price">
+                    <p class="model">Lovic X200 PRO</p>
+                    <p class="price">$1,000.00</p>
+
+                </div>
+                <div class="quickbar">
+                    <a href="#" class="heart">
+                        <i class="fa fa-heart-o"></i>
+                        <p class="wishlist">Wishlist</p>
+                    </a>
+                    <a href="#" class="search">
+                        <i class="fa fa-search"></i>
+                        <p class="quickview">Quick view</p>
+                    </a>
+                    <a href="#" class="compare">
+                        <i class="fa fa-bar-chart"></i>
+                        <p class="compare">Compare</p>
+                    </a>
+                    <a href="#" class="cart">
+                        <i class="fa fa-cart-plus"></i>
+                        <p class="cart">Add to cart</p>
+                    </a>
+
+                </div>
+            </div>
+            <div class="phantom">
+                <div class="price">
+                    <p class="model">Phantom 4 Pro V2.0 </p>
+                    <p class="price">$899.00</p>
+
+                </div>
+                <div class="quickbar">
+                    <a href="#" class="heart">
+                        <i class="fa fa-heart-o"></i>
+                        <p class="wishlist">Wishlist</p>
+                    </a>
+                    <a href="#" class="search">
+                        <i class="fa fa-search"></i>
+                        <p class="quickview">Quick view</p>
+                    </a>
+                    <a href="#" class="compare">
+                        <i class="fa fa-bar-chart"></i>
+                        <p class="compare">Compare</p>
+                    </a>
+                    <a href="#" class="cart">
+                        <i class="fa fa-cart-plus"></i>
+                        <p class="cart">Add to cart</p>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <div class="hero3">
+            <div class="protection">
+                <div class="content">
+                    <h1 class="protection">Diving Protection</h1>
+                    <a href="#" class="shopnow">Shop now</a>
+                </div>
+                <img src="assets/H3/drone-1-banner-4.jpg" alt="" class="protection">
+            </div>
+            <div class="gimbal">
+                <div class="content">
+                    <h1 class="protection">Gimbals & Sticks</h1>
+                    <a href="#" class="shopnow">Shop now</a>
+                </div>
+                <img src="assets/H3/drone-1-banner-5.jpg" alt="" class="gimbal">
+            </div>
+            <div class="memorylens">
+                <div class="top">
+                    <div class="content">
+                        <h2>Protection <br> & Cases</h2>
+                        <a href="#" class="shopnow">Shop now</a>
+
+                    </div>
+                    <img src="assets/H3/drone-1-banner-6.jpg" alt="" class="top">
+                </div>
+                <div class="bottom">
+                    <div class="left">
+                        <div class="content">
+                            <h2>Memory</h2>
+                            <a href="#" class="shopnow2">Shop now</a>
+                        </div>
+                        <img src="assets/H3/drone-1-banner-7.jpg" alt="" class="left">
+                    </div>
+                    <div class="right">
+                        <div class="content">
+                            <h2>Lens</h2>
+                            <a href="#" class="shopnow3">Shop now</a>
+                        </div>
+                        <img src="assets/H3/drone-1-banner-8.jpg" alt="" class="right">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="videos">
+            <h2 class="video">Videos from our clients</h2>
+            <div class="v1">
+                <i class="fa fa-play-circle-o"></i>
+
+                <video src="assets/Video/video-1-drone.mp4" class="v1" poster="assets/Video/video-1-drone.jpg" controls>
+                    <source src="assets/Video/video-1-drone.mp4" type="mp4">
+                </video>
+            </div>
+            <div class="v2">
+                <i class="fa fa-play-circle-o"></i>
+                <video src="assets/Video/video-2-drone.mp4" class="v2" poster="assets/Video/video-2-drone.jpg" controls
+                    width="100px" height="100px">
+
+                </video>
+            </div>
+            <div class="v3">
+                <i class="fa fa-play-circle-o"></i>
+                <video src="Assets/Video/video-3-drone.mp4" class="v3" poster="assets/Video/video-3-drone.jpg" controls>
+                </video>
+            </div>
+        </div>
+        <div class="blogg">
+            <h2 class="blogg">From the blog</h2>
+            <div class="cystomer">
+                <div class="img1">
+                    <img src="assets/Blog/drone-blog-1.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p><i class="fa fa-calendar"></i> &#160 August 12,2023 &#160 &#160<i class="fa fa-user"></i> &#160
+                        Park John
+                    </p>
+                    <h3>Best cystomers stories</h3>
+                    <div class="readmore">
+                        <a href="#">Read more</a>
+                        <div class="u1"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="dmb">
+                <div class="img2">
+                    <img src="assets/Blog/drone-blog-2.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p><i class="fa fa-calendar"></i> &#160 August 12,2023 &#160 &#160 <i class="fa fa-user"></i> &#160
+                        Park John
+                    </p>
+                    <h3>Best cystomers stories</h3>
+                    <div class="readmore">
+                        <a href="#">Read more</a>
+                        <div class="u1"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="underwater">
+                <div class="img3">
+                    <img src="assets/Blog/drone-blog-3.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p><i class="fa fa-calendar"></i> &#160 August 12,2023 &#160 &#160 <i class="fa fa-user"></i> &#160
+                        Park John
+                    </p>
+                    <h3>Best cystomers stories</h3>
+                    <div class="readmore">
+                        <a href="#">Read more</a>
+                        <div class="u1"></div>
+                    </div>
+
+                </div>
+            </div>
+            <div class="drone">
+                <div class="img4">
+                    <img src="assets/Blog/drone-blog-4.jpg" alt="">
+                </div>
+                <div class="content">
+                    <p><i class="fa fa-calendar"></i> &#160 August 12,2023 &#160 &#160<i class="fa fa-user"></i> &#160
+                        Park John
+                    </p>
+                    <h3>Best cystomers stories</h3>
+                    <div class="readmore">
+                        <a href="#">Read more</a>
+                        <div class="u1"></div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="mission">
+            <div class="m1">
+                <img src="assets/Mission/drone-1-social-img-1.png" alt="" class="m1">
+            </div>
+            <div class="content">
+                <h1 class="mission">Our Mission ? Make <br> better videos...no matter <br>What tools you have</h1>
+                <p class="mission">Read more about our mission!</p>
+                <a href="#" class="mission">For Drones</a>
+            </div>
+            <div class="m2">
+                <img src="assets/Mission/drone-1-social-img-2.png" alt="" class="m2">
+            </div>
+        </div>
+    </div>
+    <footer>
+        <div class="top"></div>
+        <div class="services">
+            <div class="shipping">
+                <img src="assets/Services/free-shipping.png" alt="shipping" class="shipping">
+                <p class="shipping">Free shipping for all orders over <br> $200</p>
+
+            </div>
+            <div class="discount">
+                <img src="assets/Services/discount.png" alt="discount" class="discount">
+                <p class="discount">Special discount for regular customers</p>
+
+            </div>
+
+            <div class="gift">
+                <img src="assets/Services/gift-card.png" alt="shipping" class="gift">
+                <p class="gift">Free gift wrapping</p>
+
+            </div>
+
+            <div class="customercare">
+                <img src="assets/Services/customer-service.png" alt="shipping" class="customercare">
+                <p class="customercare">Expert Customer service</p>
+
+            </div>
+
+
+        </div>
+        <div class="copyrightt">
+            <div class="rights">
+                <p class="reserved">Copyright &copy 2024 loobek. All Rights Reserved</p>
+                <a href="#" class="terms">Terms of Use</a>
+                <a href="#" class="affiliate">Affiliate Program</a>
+                <a href="#" class="accessibilitt">Accessibility</a>
+            </div>
+            <div class="pmethods">
+                <i class="fa fa-cc-paypal"></i>
+                <i class="fa fa-cc-stripe"></i>
+                <i class="fa fa-ccdiners-club"></i>
+                <i class="fa fa-cc-visa"></i>
+                <i class="fa fa-cc-jcb"></i>
+                <i class="fa fa-cc-amex"></i>
+                <i class="fa fa-cc-mastercard"></i>
+                <i class="fa fa-cc-discover"></i>
+                <i class="fa fa-cc-money"></i>
+            </div>
+        </div>
+
+    </footer>
+    </div>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
